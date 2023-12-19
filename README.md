@@ -1,12 +1,12 @@
 # editorOpen
 
-## How to create a MacOS application that makes neovim GUI editor applications Finder-friendly
+## Create a MacOS application that makes neovim GUI editor applications Finder-friendly
 
 ### 1. Purpose
 
-The subject application is hereinafter called "editorOpen" and will normally be editorOpen.app in the Applications folder. It is intended to be Finder's default application for types of files to be opened in a neovim GUI editor such as Neovide or goneovim that don't otherwise always cooperate with Finder. editorOpen allows files to be opened in such a GUI editor via Finder, regardless of whether the editor was previously open.
+The created application is hereinafter called "editorOpen" and will normally be editorOpen.app in the Applications folder. It is intended to be Finder's default application for types of files to be opened in a neovim GUI editor such as Neovide or goneovim that don't otherwise always cooperate with Finder. editorOpen allows files to be opened in such a GUI editor via Finder, regardless of whether the editor was previously open.
 
-If the default application for the file(s) to be opened is not editorOpen, it/they can be opened in the target editor by choosing "Open with..." from Finder's context (right-click) menu.
+If the default application for the file(s) to be opened is not editorOpen, it/they can still  be opened in the target editor by choosing "Open with..." from Finder's context (right-click) menu.
 
 ### 2. Building editorOpen.app
 
@@ -68,7 +68,7 @@ editorOpen sets the evironment variable `FINDER_LAUNCH`. This may be used by you
 
 ### 5. What editorOpen.sh does
 
-It gets the shell command that opens that target editor application. Then it opens that application if it is not already open. Then it waits until it can find an RPC server socket for that application (see 3. above). If the wait times out, it merely opens the the GUI editor application. Otherwise, it sends keystrokes for an `edit [filespec(s)]` command to the instance of nvim embedded by the GUI application. Finally, it brings the target editor's window to the front.
+It gets the shell command that opens that target editor application. If the target editor is not open, it sets the `FINDER_LAUNCH` environment variable and opens the editor application. Then it waits until it can find an RPC server socket for that application (see (3) above). If the wait times out, it merely opens the the GUI editor application. Otherwise, it sends keystrokes for an `edit [filespec(s)]` command to the instance of nvim embedded by the GUI application. Finally, it brings the target editor's window to the front.
 
 ### 6. Last words
 
