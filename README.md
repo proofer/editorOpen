@@ -10,19 +10,20 @@ If the default application for the file(s) to be opened is not editorOpen,  it/t
 
 The guts of editorOpen.app is a zsh script that opens its argument file(s) in the target nvim GUI editor app. A MacOS "applet" application created by Apple's Automator utility runs the script. Herein the script's name is editorApp.sh, but the name is significant only in the Automator-built .app so you can change it if you like (step 8):
  
-1. Open Automator;
-2. File::New (Cmd-N);
-3. Select the "Application" icon;
-4. Click "Choose";
-5. Type "shell" into the search field at the top of the actions list;
-6. Double-click the "Run Shell Script" action;
-7. Choose "as arguments" from the "Pass input:" menu;
-8. In the default code *replace* the line containing "echo" with one in this form:    `/bin/zsh [path to editorApp.sh]  [path to target editor .app file] "$f"`
-9.  File::Save... or type Cmd-S;
-10. Change the "Save As:" name to editorOpen.app (or a name of your choosing);
-11. Click Save. 
+(1) Open Automator;  
+(2) File::New (Cmd-N);  
+(3) Select the "Application" icon;  
+(4) Click "Choose";  
+(5) Type "shell" into the search field at the top of the actions list;  
+(6) Double-click the "Run Shell Script" action;  
+(7) Choose "as arguments" from the "Pass input:" menu;  
+(8) In the default code *replace* the line containing "echo" with one in this form:    
+`/bin/zsh [path to editorApp.sh]  [path to target editor .app file] "$f"`  
+(9) File::Save... or type Cmd-S;  
+(10) Change the "Save As:" name to editorOpen.app (or a name of your choosing);  
+(11) Click Save.
 
-In step 8 the line of zsh code has four elements:
+In step (8) the line of zsh code has four elements:
 
 1. /bin/zsh -- our script requires zsh
 2. the filespec of our script, e.g., ~/dev/editorOpen/editorApp.sh
