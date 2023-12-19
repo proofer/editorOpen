@@ -58,7 +58,7 @@ Only two or three file types are easily set "manually" by opening a Finder Get I
 `duti` can be installed by Homebrew with `brew install duti`. Its github repo is
 https://github.com/moretension/duti
 
-###5. The `FINDER_LAUNCH` environment variable
+### 5. The `FINDER_LAUNCH` environment variable
 
 editorOpen sets the evironment variable `FINDER_LAUNCH`. This may be used by your nvim config code to do, or avoid doing, something if nvim is running in a GUI application that is opening (a) Finder-selected file(s). For example, I have a Lua function that opens a floating-window instance of the nvim-tree plugin's file explorer at startup if nvim was not opened with (a) file(s) argument(s). At the start of that function I have:
 
