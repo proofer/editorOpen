@@ -58,7 +58,7 @@ Only two or three file types are easily set "manually" by opening a Finder Get I
 `duti` can be installed by Homebrew with `brew install duti`. Its github repo is
 https://github.com/moretension/duti
 
-### The `FINDER_LAUNCH` environment variable
+###5. The `FINDER_LAUNCH` environment variable
 
 editorOpen sets the evironment variable `FINDER_LAUNCH`. This may be used by your nvim config code to do, or avoid doing, something if nvim is running in a GUI application that is opening (a) Finder-selected file(s). For example, I have a Lua function that opens a floating-window instance of the nvim-tree plugin's file explorer at startup if nvim was not opened with (a) file(s) argument(s). At the start of that function I have:
 
@@ -66,10 +66,10 @@ editorOpen sets the evironment variable `FINDER_LAUNCH`. This may be used by you
         return
      end
 
-### 5. What editorOpen.sh does
+### 6. What editorOpen.sh does
 
 It gets the shell command that opens that target editor application. If the target editor is not open, it sets the `FINDER_LAUNCH` environment variable and opens the editor application. Then it waits until it can find an RPC server socket for that application (see (3) above). If the wait times out, it merely opens the the GUI editor application. Otherwise, it sends keystrokes for an `edit [filespec(s)]` command to the instance of nvim embedded by the GUI application. Finally, it brings the target editor's window to the front.
 
-### 6. Last words
+### 7. Last words
 
 I set up this small system to have the convenience of occasionally using Finder to open text-editable files in Neovide. At the time this repo became public I have tested only with Neovide and goneovim, and only on my Mac mini running Ventura; the files in this repo are the ones I am using. I welcome any questions, issue reports, or suggestions you may have.
