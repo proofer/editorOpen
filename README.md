@@ -1,6 +1,6 @@
 # editorOpen
 
-### MacOS application to relay filespec(s) of Finder-opened file(s) to a neovim GUI application
+## How to create a MacOS application that makes neovim GUI editor applications Finder-friendly
 
 ### 1. Purpose
 
