@@ -1,3 +1,0 @@
-/Applications/Neovide.app
-******The first line in this file is read by editorApp.sh
-/Applications/goneovim.app
