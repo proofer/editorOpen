@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Arguments:
-# $1 -- the fileaspec of the editor app, e.g., /Applications/CoolGUInvim.app
+# $1 -- the filespec of the editor app, e.g., /Applications/CoolGUInvim.app
 # $2 -- the filespec(s) of the file(s) to be edited, passed by Finder
 
 # Get the `Executable file` value, e.g., cooledit, from the app's Info.plist:
